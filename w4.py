@@ -1,1 +1,4 @@
-print("s40523130")
+mystring = "s40523130"
+
+
+print("mystring")
