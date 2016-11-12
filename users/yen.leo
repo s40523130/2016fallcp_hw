@@ -18,7 +18,7 @@
 <v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button pelican-blog</vh></v>
 </v>
-<v t="amd.20151215180106.1"><vh>設定與開發</vh>
+<v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
 <v t="amd.20151216151325.1" a="E"><vh>@clean index.html</vh>
 <v t="amd.20161004083800.1" a="E"><vh>html</vh>
 <v t="amd.20161004083800.2" a="E"><vh>head</vh>
@@ -27,10 +27,8 @@
 <v t="amd.20161004083800.5" a="E"><vh>body</vh>
 <v t="amd.20161004083800.6" a="E"><vh>reveal div</vh>
 <v t="amd.20161004083800.7" a="E"><vh>slides div</vh>
-<v t="amd.20161004095719.1" a="E"><vh>封面投影片</vh>
-<v t="amd.20161004095719.2"><vh>封面投影片內容</vh></v>
-</v>
 <v t="amd.20161004083800.8"><vh>HTML 投影片 (標題)</vh></v>
+<v t="leo.20161112222324.1"><vh>影片</vh></v>
 <v t="amd.20161004104820.1" a="E"><vh>三大主題教學</vh>
 <v t="amd.20161004104641.1" a="E"><vh>主題教學</vh>
 <v t="amd.20161004104641.2"><vh>機械設計主題教學</vh></v>
@@ -110,6 +108,16 @@
 </v>
 </v>
 <v t="amd.20161004202833.1"><vh>@edit ../README.md</vh></v>
+<v t="leo.20161112212346.1" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20161112212346.2"><vh>Recovered node "head" from @clean index.html</vh>
+<v t="leo.20161112212346.3"><vh>old:head</vh></v>
+<v t="leo.20161112212346.4"><vh>new:head</vh></v>
+</v>
+<v t="leo.20161112212346.5"><vh>Recovered node "&lt;&lt; 投影片標題 &gt;&gt;" from @clean index.html</vh>
+<v t="leo.20161112212346.6"><vh>old:&lt;&lt; 投影片標題 &gt;&gt;</vh></v>
+<v t="leo.20161112212346.7"><vh>new:&lt;&lt; 投影片標題 &gt;&gt;</vh></v>
+</v>
+</v>
 </vnodes>
 <tnodes>
 <t tx="amd.20151215170031.1"></t>
@@ -247,7 +255,9 @@ apply broader style changes, like switching the page background.
 </t>
 <t tx="amd.20161004083800.2">&lt;head&gt;
     &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;&lt;&lt; 投影片標題 &gt;&gt;&lt;/title&gt;
+    &lt;title&gt;    2016 Fall 計算機程式課程
+    &lt;&lt; 投影片標題 &gt;&gt;
+&lt;/title&gt;
     &lt;meta name="description" content="A framework for easily creating beautiful presentations using HTML"&gt;
     &lt;meta name="author" content="Hakim El Hattab"&gt;
     
@@ -292,8 +302,7 @@ apply broader style changes, like switching the page background.
 @others
 &lt;/section&gt;
 </t>
-<t tx="amd.20161004083800.3">2016 Fall 計算機程式課程
-</t>
+<t tx="amd.20161004083800.3"></t>
 <t tx="amd.20161004083800.47">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -343,7 +352,7 @@ apply broader style changes, like switching the page background.
 
 </t>
 <t tx="amd.20161004083800.8">&lt;section&gt;
-    &lt;h1&gt;2016Fall CPA 計算機程式課程&lt;/h1&gt;
+    &lt;h1&gt;2016Fall CPA 40523130 陳士正&lt;/h1&gt;
     &lt;h3&gt;The HTML Presentation Framework&lt;/h3&gt;
     &lt;p&gt;
     &lt;small&gt;
@@ -351,7 +360,11 @@ apply broader style changes, like switching the page background.
     &lt;a href="http://twitter.com/hakimel"&gt;@hakimel&lt;/a&gt;
     &lt;/small&gt;
     &lt;/p&gt;
-    
+    &lt;/p&gt;
+    &lt;a href="https://vimeo.com/191015781"&gt;2016-11-10_22-28-44&lt;/a&gt; from 
+    &lt;a href="https://vimeo.com/user58667333"&gt;陳士正&lt;/a&gt; on 
+    &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;
+    &lt;/p&gt;
     &lt;a href="blog/index.html"&gt;blog&lt;/a&gt;
 &lt;/section&gt;
 </t>
@@ -447,26 +460,6 @@ make.start()
 &gt; 其中也可以包含空白行
 &gt;
 &gt; 這是最後一行
-</t>
-<t tx="amd.20161004095719.1">&lt;section data-markdown&gt;
-    &lt;script type="text/template"&gt;
-@others
-    &lt;/script&gt;
-&lt;/section&gt;
-
-
-						
-</t>
-<t tx="amd.20161004095719.2"># 2016Fall CPA 計算機程式課程
-
-### THE HTML PRESENTATION FRAMEWORK
-
-&lt;small&gt;
-Created by [Hakim El Hattab](http://hakim.se)
-[@hakimel](http://twitter.com/hakimel)
-&lt;/small&gt;
-
-[blog](blog/index.html)
 </t>
 <t tx="amd.20161004100003.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
@@ -741,5 +734,125 @@ PLUGINS = ['liquid_tags.notebook', 'summary']
 <t tx="leo.20151213230957.1"># 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
 
 DEFAULT_DATE = 'fs'</t>
+<t tx="leo.20161112212346.1"></t>
+<t tx="leo.20161112212346.2">(uncached) amd.20161004083800.2
+Diff...
+  &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
++     &lt;title&gt;&lt;&lt; 投影片標題 &gt;&gt;&lt;/title&gt;
+-     &lt;title&gt;    2016 Fall 計算機程式課程
+-     &lt;&lt; 投影片標題 &gt;&gt;
+- &lt;/title&gt;
+      &lt;meta name="description" content="A framework for easily creating beautiful presentations using HTML"&gt;
+      &lt;meta name="author" content="Hakim El Hattab"&gt;
+      
+      &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+      &lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;
+      
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;
+      
+      &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/css/reveal.css"&gt;
+      &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/css/theme/black.css" id="theme"&gt;
+      
+      &lt;!-- Theme used for syntax highlighting of code --&gt;
+      &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/lib/css/zenburn.css"&gt;
+  
+      &lt;!-- Printing and PDF exports --&gt;
+      &lt;script&gt;
+          var link = document.createElement( 'link' );
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cad-lab.github.io/cadlab_data/reveal/css/print/pdf.css' : 'https://cad-lab.github.io/cadlab_data/reveal/css/print/paper.css';
+          document.getElementsByTagName( 'head' )[0].appendChild( link );
+      &lt;/script&gt;
+  
+      &lt;!--[if lt IE 9]&gt;
+      &lt;script src="https://cad-lab.github.io/cadlab_data/reveal/lib/js/html5shiv.js"&gt;&lt;/script&gt;
+      &lt;![endif]--&gt;
+  &lt;/head&gt;
+  
+</t>
+<t tx="leo.20161112212346.3">&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;&lt; 投影片標題 &gt;&gt;&lt;/title&gt;
+    &lt;meta name="description" content="A framework for easily creating beautiful presentations using HTML"&gt;
+    &lt;meta name="author" content="Hakim El Hattab"&gt;
+    
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;
+    
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;
+    
+    &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/css/reveal.css"&gt;
+    &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/css/theme/black.css" id="theme"&gt;
+    
+    &lt;!-- Theme used for syntax highlighting of code --&gt;
+    &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/lib/css/zenburn.css"&gt;
+
+    &lt;!-- Printing and PDF exports --&gt;
+    &lt;script&gt;
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cad-lab.github.io/cadlab_data/reveal/css/print/pdf.css' : 'https://cad-lab.github.io/cadlab_data/reveal/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    &lt;/script&gt;
+
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src="https://cad-lab.github.io/cadlab_data/reveal/lib/js/html5shiv.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+&lt;/head&gt;
+
+</t>
+<t tx="leo.20161112212346.4">&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;    2016 Fall 計算機程式課程
+    &lt;&lt; 投影片標題 &gt;&gt;
+&lt;/title&gt;
+    &lt;meta name="description" content="A framework for easily creating beautiful presentations using HTML"&gt;
+    &lt;meta name="author" content="Hakim El Hattab"&gt;
+    
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;
+    
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;
+    
+    &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/css/reveal.css"&gt;
+    &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/css/theme/black.css" id="theme"&gt;
+    
+    &lt;!-- Theme used for syntax highlighting of code --&gt;
+    &lt;link rel="stylesheet" href="https://cad-lab.github.io/cadlab_data/reveal/lib/css/zenburn.css"&gt;
+
+    &lt;!-- Printing and PDF exports --&gt;
+    &lt;script&gt;
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cad-lab.github.io/cadlab_data/reveal/css/print/pdf.css' : 'https://cad-lab.github.io/cadlab_data/reveal/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    &lt;/script&gt;
+
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src="https://cad-lab.github.io/cadlab_data/reveal/lib/js/html5shiv.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+&lt;/head&gt;
+
+</t>
+<t tx="leo.20161112212346.5">(uncached) amd.20161004083800.3
+Diff...
++ 2016 Fall 計算機程式課程
+</t>
+<t tx="leo.20161112212346.6">2016 Fall 計算機程式課程
+</t>
+<t tx="leo.20161112212346.7"></t>
+<t tx="leo.20161112222324.1">&lt;section&gt;
+    &lt;h2&gt;2016-11-10_22-28-44&lt;/h2&gt;
+    &lt;iframe src="https://player.vimeo.com/video/191015781" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;p&gt;
+    &lt;a href="https://vimeo.com/191015781"&gt;2016-11-10_22-28-44&lt;/a&gt; from 
+    &lt;a href="https://vimeo.com/user58667333"&gt;陳士正&lt;/a&gt; on 
+    &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;/section&gt;</t>
 </tnodes>
 </leo_file>
