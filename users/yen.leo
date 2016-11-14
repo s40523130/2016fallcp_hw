@@ -99,8 +99,11 @@
 <v t="amd.20160106093454.1" a="E"><vh>yen 所寫的網誌文章</vh>
 <v t="amd.20160727114506.1" a="E"><vh>201609</vh>
 <v t="amd.20160727120222.1"><vh>@edit 20160921.md</vh></v>
+<v t="leo.20161114213957.1"><vh>@edit 20161111.md</vh></v>
 </v>
 </v>
+<v t="leo.20161113205737.1"><vh>@button https server</vh></v>
+<v t="leo.20161113205758.1"><vh>產生 .key 與 .crt</vh></v>
 </v>
 <v t="amd.20160106094754.1"><vh>@path ./../content/pages</vh>
 <v t="amd.20160106094829.1" a="E"><vh>yen 所寫的 pages 文章</vh>
@@ -361,9 +364,12 @@ apply broader style changes, like switching the page background.
     &lt;/small&gt;
     &lt;/p&gt;
     &lt;/p&gt;
-    &lt;a href="https://vimeo.com/191015781"&gt;2016-11-10_22-28-44&lt;/a&gt; from 
+    &lt;a href="https://vimeo.com/191015781"&gt;git指令應用&lt;/a&gt; from 
     &lt;a href="https://vimeo.com/user58667333"&gt;陳士正&lt;/a&gt; on 
     &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;/p&gt;
+    &lt;a href="https://github.com/s40523130/2016fallcp_hw/wiki"&gt;wiki&lt;/a&gt;
     &lt;/p&gt;
     &lt;a href="blog/index.html"&gt;blog&lt;/a&gt;
 &lt;/section&gt;
@@ -846,13 +852,15 @@ Diff...
 </t>
 <t tx="leo.20161112212346.7"></t>
 <t tx="leo.20161112222324.1">&lt;section&gt;
-    &lt;h2&gt;2016-11-10_22-28-44&lt;/h2&gt;
+    &lt;h2&gt;git指令應用&lt;/h2&gt;
     &lt;iframe src="https://player.vimeo.com/video/191015781" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
     &lt;p&gt;
-    &lt;a href="https://vimeo.com/191015781"&gt;2016-11-10_22-28-44&lt;/a&gt; from 
+    &lt;a href="https://vimeo.com/191015781"&gt;git指令應用&lt;/a&gt; from 
     &lt;a href="https://vimeo.com/user58667333"&gt;陳士正&lt;/a&gt; on 
     &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.
     &lt;/p&gt;
 &lt;/section&gt;</t>
+<t tx="leo.20161113205737.1"></t>
+<t tx="leo.20161113205758.1"></t>
 </tnodes>
 </leo_file>
