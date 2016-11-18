@@ -100,6 +100,7 @@
 <v t="amd.20160727114506.1" a="E"><vh>201609</vh>
 <v t="amd.20160727120222.1"><vh>@edit 20160921.md</vh></v>
 <v t="leo.20161114213957.1"><vh>@edit 20161111.md</vh></v>
+<v t="leo.20161118140944.1"><vh>@edit 20161118.md</vh></v>
 </v>
 </v>
 <v t="leo.20161113205737.1"><vh>@button https server</vh></v>
@@ -860,7 +861,28 @@ Diff...
     &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.
     &lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20161113205737.1"></t>
-<t tx="leo.20161113205758.1"></t>
+<t tx="leo.20161113205737.1">@language python
+import os
+import subprocess
+import threading
+import http.server, ssl
+
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 5443)
+    httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("5443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
+<t tx="leo.20161113205758.1">sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout localhost.key -out localhost.crt</t>
 </tnodes>
 </leo_file>
