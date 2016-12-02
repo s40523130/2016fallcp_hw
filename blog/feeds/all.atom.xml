@@ -55,10 +55,33 @@ def background(x, y, xinc, yinc, xnum, ynum, ctx):
         ctx.strokeStyle = "blue"
         ctx.stroke()
         ctx.closePath()
+
+def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
+    # 標定各弦音符號, 以及把位編號
+    ctx.beginPath()
+    ctx.fillStyle = color
+    ctx.strokeStyle = color
+    #ctx.font = "20px Arial"
+    ctx.font = str(fontSize)+ "px Arial"
+    ctx.fillText(string, x, y)
+    ctx.font = str(fontSize-8)+ "px Arial"
+    if sup != "":
+        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
+    if sub != "":
+        ctx.fillText(sup, x+fontSize/1.6, y)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()        
+
 w = 20
 h = 30
 background(100, 100, w, h, 5, 5, ctx)
-
+mylist = ["E", "A", "D", "G", "B", "E"]
+num = 0
+for s in mylist:
+    #canvasText(100, 80, 20, "A", "B", "", "black", ctx)
+    canvasText(100+num*w, 80, 20, s, "", "", "black", ctx)
+    num = num + 1
 &lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>git 指令應用</title><link href="./git-zhi-ling-ying-yong.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./git-zhi-ling-ying-yong.html</id><summary type="html">&lt;iframe src="https://player.vimeo.com/video/191015781" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;a href="https://vimeo.com/191015781"&gt;2016-11-10_22-28-44&lt;/a&gt; from &lt;a href="https://vimeo.com/user58667333"&gt;陳士正&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</summary><category term="使用git clone"></category><category term="git add -A"></category><category term="git push origin"></category></entry><entry><title>W10 Brython 繪圖範圍</title><link href="./w10-brython-hui-tu-fan-wei.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w10-brython-hui-tu-fan-wei.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
