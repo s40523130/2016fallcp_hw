@@ -101,6 +101,7 @@
 <v t="amd.20160727120222.1"><vh>@edit 20160921.md</vh></v>
 <v t="leo.20161114213957.1"><vh>@edit 20161111.md</vh></v>
 <v t="leo.20161118140944.1"><vh>@edit 20161118.md</vh></v>
+<v t="leo.20161202143446.1"><vh>@edit 20161202.md</vh></v>
 </v>
 </v>
 <v t="leo.20161113205737.1"><vh>@button https server</vh></v>
