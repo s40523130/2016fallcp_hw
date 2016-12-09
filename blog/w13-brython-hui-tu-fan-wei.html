@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>W11 Brython 繪圖範圍 - 2016Fall 課程網誌 (虎尾科大MDE)</title>
+    <title>W13 Brython 繪圖範圍 - 2016Fall 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,18 +166,18 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./w11-brython-hui-tu-fan-wei.html">
+<link rel="canonical" href="./w13-brython-hui-tu-fan-wei.html">
 
         <meta name="author" content="yen" />
         <meta name="keywords" content="Brython" />
-        <meta name="description" content="Brython 繪圖" />
+        <meta name="description" content="將http://mde.tw/2016fallcp/course/Python3Programs.txt 整理成 brython" />
 
         <meta property="og:site_name" content="2016Fall 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="W11 Brython 繪圖範圍"/>
-        <meta property="og:url" content="./w11-brython-hui-tu-fan-wei.html"/>
-        <meta property="og:description" content="Brython 繪圖"/>
-        <meta property="article:published_time" content="2016-12-02" />
+        <meta property="og:title" content="W13 Brython 繪圖範圍"/>
+        <meta property="og:url" content="./w13-brython-hui-tu-fan-wei.html"/>
+        <meta property="og:description" content="將http://mde.tw/2016fallcp/course/Python3Programs.txt 整理成 brython"/>
+        <meta property="article:published_time" content="2016-12-09" />
             <meta property="article:section" content="Cours" />
             <meta property="article:tag" content="Brython" />
             <meta property="article:author" content="yen" />
@@ -290,10 +290,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./w11-brython-hui-tu-fan-wei.html"
+                    <a href="./w13-brython-hui-tu-fan-wei.html"
                        rel="bookmark"
-                       title="Permalink to W11 Brython 繪圖範圍">
-                        W11 Brython 繪圖範圍
+                       title="Permalink to W13 Brython 繪圖範圍">
+                        W13 Brython 繪圖範圍
                     </a>
                 </h1>
             </header>
@@ -303,7 +303,7 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-12-02T12:00:00+08:00"> 週五 02 十二月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-12-09T12:00:00+08:00"> 週五 09 十二月 2016</time>
     </span>
             <span class="label label-default">By</span>
             <a href="./author/yen.html"><i class="fa fa-user"></i> yen</a>
@@ -315,10 +315,9 @@ init_mathjax();
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Brython 繪圖</p>
+                <p>將<a href="http://mde.tw/2016fallcp/course/Python3Programs.txt">http://mde.tw/2016fallcp/course/Python3Programs.txt</a> 整理成  brython</p>
 
 
-<p>繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖</p>
 <!-- 導入 Brython 標準程式庫 -->
 
 <script type="text/javascript" 
@@ -335,70 +334,37 @@ brython(1);
 
 <!-- 以下實際利用  Brython 畫圖 -->
 
-<canvas id="chord1" width="600" height="400"></canvas>
+<div id="container"></div>
 
 <script type="text/python3">
 from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()        
-
-w = 20
-h = 30
-background(100, 100, w, h, 5, 5, ctx)
-mylist = ["E", "A", "D", "G", "B", "E"]
-num = 0
-for s in mylist:
-    #canvasText(100, 80, 20, "A", "B", "", "black", ctx)
-    canvasText(100+num*w, 80, 20, s, "", "", "black", ctx)
-    num = num + 1
+from browser import html
+container = doc['container']
+mystring = ""
+num = input("請輸入重複執行次數")
+#for i in range(1, 11):
+for i in range(1,int(num)+1):
+    mystring +=str(i) + ": hello mde"+ html.BR()
+container <= mystring
 </script>
+
+<div id="container"></div>
+
+<script type="text/python3">
+from browser import document as doc
+from browser import html
+container = doc['container']
+mystring = ""
+cdegree = input("請輸入攝氏溫度")
+fdegree = float(cdegree)*9/5 + 32
+output_string = "攝氏" + str(cdegree) + "度=華氏" + str(fdegree) + "度"
+container <= output_string
+</script>
+
+<p>開始進行範例分類:</p>
+<p>接受使用者的輸入</p>
+<p>利用 alert()顯示結果</p>
+<p>直接列印結果</p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -414,8 +380,13 @@ for s in mylist:
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="./w11-brython-hui-tu-fan-wei.html">
-                            W11 Brython 繪圖範圍
+                        <a href="./w13-brython-hui-tu-fan-wei.html">
+                            W13 Brython 繪圖範圍
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./w12-brython-hui-tu-fan-wei.html">
+                            W12 Brython 繪圖範圍
                         </a>
                     </li>
                     <li class="list-group-item">
