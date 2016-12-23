@@ -348,6 +348,21 @@ for i in range(1,int(num)+1):
 container <= mystring
 </script>
 
+<pre class="brush: python">
+<div id="container"></div>
+<script type="text/python3">
+from browser import document as doc
+from browser import html
+container = doc['container']
+mystring = ""
+num = input("請輸入重複執行次數")
+#for i in range(1, 11):
+for i in range(1,int(num)+1):
+    mystring +=str(i) + ": hello mde"+ html.BR()
+container <= mystring
+</script>
+</pre>
+
 <div id="container"></div>
 
 <script type="text/python3">
@@ -360,6 +375,20 @@ fdegree = float(cdegree)*9/5 + 32
 output_string = "攝氏" + str(cdegree) + "度=華氏" + str(fdegree) + "度"
 container <= output_string
 </script>
+
+<pre class="brush: python">
+<div id="container"></div>
+<script type="text/python3">
+from browser import document as doc
+from browser import html
+container = doc['container']
+mystring = ""
+cdegree = input("請輸入攝氏溫度")
+fdegree = float(cdegree)*9/5 + 32
+output_string = "攝氏" + str(cdegree) + "度=華氏" + str(fdegree) + "度"
+container <= output_string
+</script>
+</pre>
 
 <p>開始進行範例分類:</p>
 <p>接受使用者的輸入</p>
@@ -380,6 +409,11 @@ container <= output_string
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="./w15-lian-xi.html">
+                            W15 練習
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="./w14-lian-xi.html">
                             W14 練習
                         </a>
@@ -397,11 +431,6 @@ container <= output_string
                     <li class="list-group-item">
                         <a href="./git-zhi-ling-ying-yong.html">
                             git 指令應用
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="./w10-brython-hui-tu-fan-wei.html">
-                            W10 Brython 繪圖範圍
                         </a>
                     </li>
                 </ul>
