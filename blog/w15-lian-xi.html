@@ -344,12 +344,13 @@ c = do["con"]
 def compa(e):
     your_input = input("請輸入一個整數!")
     # 如何判斷所輸入的整數比 10 大
-
-    if int(your_input) > 10:
-        c <= "所輸入的整數:" + your_input + "比 10 大" + html.BR()
-    else:
-        c <= "所輸入的整數:" + your_input + "比 10 小" + html.BR()
-
+    try:
+        if int(your_input) > 10:
+            c <= "所輸入的整數:" + your_input + "比 10 大" + html.BR()
+        else:
+            c <= "所輸入的整數:" + your_input + "比 10 小" + html.BR()
+    except:
+            c <= "請輸入整數?" + html.BR()
 #print("test")
 '''
 for i in range(5):
