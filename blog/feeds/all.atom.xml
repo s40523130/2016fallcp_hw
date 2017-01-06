@@ -44,6 +44,10 @@ def animate():
     y2 = y1 + r*math.sin(theca*deg)
     line(x1,y1,x2,y2)
     circle(x1,y1,5)
+    x3 = x2 + 50*math.cos(theca*10*deg)
+    y3 = y2 + 50*math.sin(theca*10*deg)
+    line(x2,y2,x3,y3)
+    circle(x1,y1,5)
     theca += 1
 
 timer.set_interval(animate,50)
