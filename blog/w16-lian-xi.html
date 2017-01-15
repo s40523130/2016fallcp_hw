@@ -359,6 +359,26 @@ document["but1"].bind("click", lottery)
 </script>
 
 <p><button id="but1">產生整數亂數</button></p>
+<p>以下為程式碼
+<pre class="brush: python">
+<div id="newyear"></div>
+<script type="text/python3">
+from browser import document
+from browser import html
+import random
+print_location = document["newyear"]</p>
+<p>def gen_int():
+    num = random.randint(1,100)
+    #print_location = document["newyear"]
+    print_location &lt;= num + html.BR()</p>
+<p>def lottery(e):
+    for i in range(6):
+        gen_int()
+    print_location &lt;= "恭喜中獎?" + html.BR()</p>
+<h1>document["but1"].bind("click", gen_int)</h1>
+<p>document["but1"].bind("click", lottery)
+</script>
+</pre></p>
 <script type="text/python3">
 from browser import document
 from browser import html
@@ -375,6 +395,21 @@ document["but2"].bind("click", lottery)
 </script>
 
 <p><button id="but2">恭喜發財</button></p>
+<p>以下為程式碼
+<pre class="brush: python">
+<script type="text/python3">
+from browser import document
+from browser import html
+import random
+print_location = document["newyear"]</p>
+<p>def lottery(e):
+    num_list = random.sample(list(range(1, 50)), 6)
+    for i in range(6):
+        print_location &lt;= num_list[i] + html.BR()
+    print_location &lt;= "(不會重複)恭喜中獎!" + html.BR()</p>
+<p>document["but2"].bind("click", lottery)
+</script>
+</pre></p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -390,8 +425,18 @@ document["but2"].bind("click", lottery)
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="./w17-lian-xi-1.html">
-                            W17 練習-1
+                        <a href="./w18-lian-xi-3.html">
+                            W18 練習-3
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./w18-lian-xi-2.html">
+                            W18 練習-2
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./w17-lian-xi-shuang-qu-bing.html">
+                            W17 練習 雙曲柄
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -402,16 +447,6 @@ document["but2"].bind("click", lottery)
                     <li class="list-group-item">
                         <a href="./w16-lian-xi.html">
                             W16 練習
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="./w15-lian-xi.html">
-                            W15 練習
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="./w14-lian-xi.html">
-                            W14 練習
                         </a>
                     </li>
                 </ul>

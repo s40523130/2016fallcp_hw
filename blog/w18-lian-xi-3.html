@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>git 指令應用 - 2016Fall 課程網誌 (虎尾科大MDE)</title>
+    <title>W18 練習-3 - 2016Fall 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,22 +166,19 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./git-zhi-ling-ying-yong.html">
+<link rel="canonical" href="./w18-lian-xi-3.html">
 
         <meta name="author" content="40523130" />
-        <meta name="keywords" content="使用git clone,git add -A,git push origin" />
-        <meta name="description" content="2016-11-10_22-28-44 from 陳士正 on Vimeo." />
+        <meta name="keywords" content="Brython" />
 
         <meta property="og:site_name" content="2016Fall 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="git 指令應用"/>
-        <meta property="og:url" content="./git-zhi-ling-ying-yong.html"/>
-        <meta property="og:description" content="2016-11-10_22-28-44 from 陳士正 on Vimeo."/>
-        <meta property="article:published_time" content="2016-11-14" />
-            <meta property="article:section" content="Misc" />
-            <meta property="article:tag" content="使用git clone" />
-            <meta property="article:tag" content="git add -A" />
-            <meta property="article:tag" content="git push origin" />
+        <meta property="og:title" content="W18 練習-3"/>
+        <meta property="og:url" content="./w18-lian-xi-3.html"/>
+        <meta property="og:description" content=""/>
+        <meta property="article:published_time" content="2017-01-15" />
+            <meta property="article:section" content="Cours" />
+            <meta property="article:tag" content="Brython" />
             <meta property="article:author" content="40523130" />
 
 
@@ -263,10 +260,10 @@ init_mathjax();
                          <li><a href="./pages/about/">
                              About
                           </a></li>
-                        <li >
+                        <li class="active">
                             <a href="./category/cours.html">Cours</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="./category/misc.html">Misc</a>
                         </li>
             </ul>
@@ -292,10 +289,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./git-zhi-ling-ying-yong.html"
+                    <a href="./w18-lian-xi-3.html"
                        rel="bookmark"
-                       title="Permalink to git 指令應用">
-                        git 指令應用
+                       title="Permalink to W18 練習-3">
+                        W18 練習-3
                     </a>
                 </h1>
             </header>
@@ -305,7 +302,7 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-11-14T12:00:00+08:00"> 週一 14 十一月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-01-15T12:00:00+08:00"> 週日 15 一月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="./author/40523130.html"><i class="fa fa-user"></i> 40523130</a>
@@ -313,17 +310,193 @@ init_mathjax();
 
 
 <span class="label label-default">Tags</span>
-	<a href="./tag/shi-yong-git-clone.html">使用git clone</a>
-        /
-	<a href="./tag/git-add-a.html">git add -A</a>
-        /
-	<a href="./tag/git-push-origin.html">git push origin</a>
+	<a href="./tag/brython.html">Brython</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <iframe src="https://player.vimeo.com/video/191015781" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <!-- PELICAN_END_SUMMARY -->
 
-<p><a href="https://vimeo.com/191015781">2016-11-10_22-28-44</a> from <a href="https://vimeo.com/user58667333">陳士正</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖</p>
+<!-- 導入 Brython 標準程式庫 -->
+
+<script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
+</script>
+
+<!-- 啟動 Brython -->
+
+<script>
+window.onload=function(){
+brython(1);
+}
+</script>
+
+<!-- 以下可以執行  Brython 程式 -->
+
+<canvas id="onebar" width="500" height="500"></canvas>
+
+<script type="text/python3">
+from browser import document as doc
+from browser import timer
+import math
+# 準備繪圖畫布
+canvas = doc["onebar"]
+ctx = canvas.getContext("2d")
+
+# 取畫布的寬與高度
+width = canvas.width
+height = canvas.height
+
+theca = 0
+
+# 每隔特定時間, 進行動畫繪製
+def animate():
+    global theca
+    # 刷新畫布
+    ctx.clearRect(0, 0, width, height)
+    # 逐一重新繪製小球
+    ctx.fillStyle = "#000000"
+    x2 = x1 + r*math.cos(theca*10*deg)
+    y2 = y1 + r*math.sin(theca*10*deg)
+    line(x1,y1,x2,y2)
+    circle(x1,y1,5)
+    x3 = x2 + 50*math.cos(-theca*10*deg)
+    y3 = y2 + 50*math.sin(-theca*10*deg)
+    line(x2,y2,x3,y3)
+    circle(x4,y4,5)
+    theca += 1
+    x5 = x4 + r*math.cos(-theca*10*deg)
+    y5 = y4 + r*math.sin(-theca*10*deg)
+    line(x4,y4,x5,y5)
+    circle(x1,y1,5)
+    x6 = x5 + 50*math.cos(theca*10*deg)
+    y6 = y5 + 50*math.sin(theca*10*deg)
+    line(x5,y5,x6,y6)
+    circle(x4,y4,5)
+    theca += 1
+    line(x3,y3,x6,y6)
+
+timer.set_interval(animate,50)
+
+
+# 畫圓函式
+def circle(x,y,r):
+    ctx.beginPath()
+    ctx.arc(x, y, r, 0, math.pi*2, True)
+    ctx.fill()
+    ctx.closePath()
+
+
+def line(x1,y1,x2,y2):
+    # 以下可以利用 ctx 物件進行畫圖
+    # 先畫一條直線
+    ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    # 將畫筆移動到 (x1, y1) 座標點
+    ctx.moveTo(x1, y1)
+    # 然後畫直線到 (x2, y2) 座標點
+    ctx.lineTo(x2, y2)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "orange"
+    # 實際執行畫線
+    ctx.stroke()
+    ctx.closePath()
+
+
+x1 = 200
+y1 = 200
+x4 = 350
+y4 = 200
+r = 50
+deg = math.pi/180
+for i in range(36):
+    x2 = x1 + r*math.cos(i*10*deg)
+    y2 = y1 + r*math.sin(i*10*deg)
+    line(x1,y1,x2,y2)
+
+line(200,200,200,300)
+circle(200,200,5)
+
+
+</script>
+
+<p>以下為程式碼
+<pre class="brush: python">
+<canvas id="onebar" width="500" height="500"></canvas>
+<script type="text/python3">
+from browser import document as doc
+from browser import timer
+import math</p>
+<h1>準備繪圖畫布</h1>
+<p>canvas = doc["onebar"]
+ctx = canvas.getContext("2d")</p>
+<h1>取畫布的寬與高度</h1>
+<p>width = canvas.width
+height = canvas.height</p>
+<p>theca = 0</p>
+<h1>每隔特定時間, 進行動畫繪製</h1>
+<p>def animate():
+    global theca
+    # 刷新畫布
+    ctx.clearRect(0, 0, width, height)
+    # 逐一重新繪製小球
+    ctx.fillStyle = "#000000"
+    x2 = x1 + r<em>math.cos(theca</em>10<em>deg)
+    y2 = y1 + r</em>math.sin(theca<em>10</em>deg)
+    line(x1,y1,x2,y2)
+    circle(x1,y1,5)
+    x3 = x2 + 50<em>math.cos(-theca</em>10<em>deg)
+    y3 = y2 + 50</em>math.sin(-theca<em>10</em>deg)
+    line(x2,y2,x3,y3)
+    circle(x4,y4,5)
+    theca += 1
+    x5 = x4 + r<em>math.cos(-theca</em>10<em>deg)
+    y5 = y4 + r</em>math.sin(-theca<em>10</em>deg)
+    line(x4,y4,x5,y5)
+    circle(x1,y1,5)
+    x6 = x5 + 50<em>math.cos(theca</em>10<em>deg)
+    y6 = y5 + 50</em>math.sin(theca<em>10</em>deg)
+    line(x5,y5,x6,y6)
+    circle(x4,y4,5)
+    theca += 1
+    line(x3,y3,x6,y6)</p>
+<p>timer.set_interval(animate,50)</p>
+<h1>畫圓函式</h1>
+<p>def circle(x,y,r):
+    ctx.beginPath()
+    ctx.arc(x, y, r, 0, math.pi*2, True)
+    ctx.fill()
+    ctx.closePath()</p>
+<p>def line(x1,y1,x2,y2):
+    # 以下可以利用 ctx 物件進行畫圖
+    # 先畫一條直線
+    ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    # 將畫筆移動到 (x1, y1) 座標點
+    ctx.moveTo(x1, y1)
+    # 然後畫直線到 (x2, y2) 座標點
+    ctx.lineTo(x2, y2)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    # 實際執行畫線
+    ctx.stroke()
+    ctx.closePath()</p>
+<p>x1 = 200
+y1 = 200
+x4 = 300
+y4 = 200
+r = 50
+deg = math.pi/180
+for i in range(36):
+    x2 = x1 + r<em>math.cos(i</em>10<em>deg)
+    y2 = y1 + r</em>math.sin(i<em>10</em>deg)
+    line(x1,y1,x2,y2)</p>
+<p>line(200,200,200,300)
+circle(200,200,5)</p>
+<p></script>
+</pre></p>
             </div>
             <!-- /.entry-content -->
         </article>
